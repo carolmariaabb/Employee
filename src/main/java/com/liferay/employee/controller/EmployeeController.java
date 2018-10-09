@@ -14,6 +14,7 @@
 
 package com.liferay.employee.controller;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -88,6 +89,7 @@ public class EmployeeController {
 		log.debug("REST request all Employees");
 
 		List<Employee> employees = employeeService.findAll();
+		employees.sort(Comparator.comparing(Employee::getName));
 
 		return ResponseEntity.ok(employees);
 	}
