@@ -32,6 +32,7 @@ public class EmployeeRepository {
 	private List<Employee> employees = new ArrayList<>();
 
 	public boolean exists(Employee employee) {
+		//return employees.stream().filter(o -> o.getName().equalsIgnoreCase(employee.getName())).findFirst().isPresent();
 		return employees.contains(employee);
 	}
 

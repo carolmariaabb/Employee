@@ -42,6 +42,19 @@ public class Employee implements Serializable {
 	}
 
 	@Override
+	public int hashCode() {
+		return this.name.toLowerCase().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Employee))
+			return false;
+
+		return this.hashCode() == o.hashCode();
+	}
+
+	@Override
 	public String toString() {
 		return "Employee{name='" + name + "}";
 	}
